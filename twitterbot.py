@@ -1,4 +1,5 @@
 from twython import Twython
+import time
 """
 Twitter Python API/Auth
 """
@@ -15,7 +16,9 @@ def tweet():
     for i in englishWords:
         if i.endswith('s'):
             twitter.update_status(status= 'I hate ' + i)
+            time.sleep(4) #Add every 4 seconds
         else:
             twitter.update_status(status='I hate the ' + i)
+            time.sleep(4) #Add every 4 seconds
 
 tweet()
